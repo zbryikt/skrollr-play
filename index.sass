@@ -1,3 +1,5 @@
+@import basic
+
 html,body
   margin: 0
   padding: 0
@@ -6,13 +8,14 @@ html,body
 
 body
   font-family: century gothic
-  background: #000
+  background: url(bk.jpg) center center no-repeat #000 fixed
+  background-size: cover
 
 .end
   position: absolute
-  top: 3000px
+  top: 8000px
 
-.bk1, .bk2
+.bk1, .bk2, .bk3
   z-index: 0
   position: fixed
   width: 100%
@@ -24,7 +27,41 @@ body
   background: url(bk2.jpg) #010 center center fixed
   background-size: cover
 
-.headline, .text2
++keyframes(bkchange)
+  0%
+    left: -25%
+  100%
+    left: 100%
+
+.bk3
+  background: #000
+  div
+    width: 25%
+    height: 100%
+    position: absolute
+    @include animation(bkchange 5s linear infinite)
+  .bk3-1
+    background: url(bk3-1.jpg) center center no-repeat fixed
+    background-size: cover
+    @include animation-delay(0.0s)
+  .bk3-2
+    background: url(bk3-2.jpg) center center no-repeat fixed
+    background-size: cover
+    @include animation-delay(1.0s)
+  .bk3-3
+    background: url(bk3-3.jpg) center center no-repeat fixed
+    background-size: cover
+    @include animation-delay(2.0s)
+  .bk3-4
+    background: url(bk3-4.jpg) center center no-repeat fixed
+    background-size: cover
+    @include animation-delay(3.0s)
+  .bk3-5
+    background: url(bk3-5.jpg) center center no-repeat fixed
+    background-size: cover
+    @include animation-delay(4.0s)
+
+.headline, .text2, .text3, .note3
   opacity: 1
   position: fixed
   z-index: 2
@@ -32,6 +69,7 @@ body
   top: 100px
   width: 100%
   background: rgba(0,0,0,0.5)
+  box-shadow: 0 1px 6px rgba(0,0,0,0.9)
   padding: 40px 0 70px
   h1
     font-size: 48px 
@@ -43,6 +81,13 @@ body
     letter-spacing: 2px
     line-height: 22px
     margin: 10px 0 0 140px
+  
+.note3
+  width: 40%
+  left: 60%
+  background: none
+  box-shadow: none
+  line-height: 48px
 
 .albums
   padding: 20px
@@ -62,3 +107,15 @@ svg#county
   display: block
   position: fixed
   z-index: 11
+
+.share
+  position: fixed
+  z-index: 12
+  width: 100%
+  padding: 50px
+  top: 40%
+  height: 20%
+  text-align: center
+  color: #ccc
+  .fb-like
+    @include transform(scale(2))

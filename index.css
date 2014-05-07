@@ -1,3 +1,9 @@
+uiload {
+  display: inline-block;
+  position: relative; }
+  uiload > div {
+    position: relative; }
+
 html, body {
   margin: 0;
   padding: 0;
@@ -6,13 +12,14 @@ html, body {
 
 body {
   font-family: century gothic;
-  background: black; }
+  background: url(bk.jpg) center center no-repeat black fixed;
+  background-size: cover; }
 
 .end {
   position: absolute;
-  top: 3000px; }
+  top: 8000px; }
 
-.bk1, .bk2 {
+.bk1, .bk2, .bk3 {
   z-index: 0;
   position: fixed;
   width: 100%;
@@ -26,7 +33,87 @@ body {
   background: url(bk2.jpg) #001100 center center fixed;
   background-size: cover; }
 
-.headline, .text2 {
+@-webkit-keyframes bkchange {
+  0% {
+    left: -25%; }
+
+  100% {
+    left: 100%; } }
+
+@-moz-keyframes bkchange {
+  0% {
+    left: -25%; }
+
+  100% {
+    left: 100%; } }
+
+@-ms-keyframes bkchange {
+  0% {
+    left: -25%; }
+
+  100% {
+    left: 100%; } }
+
+@keyframes bkchange {
+  0% {
+    left: -25%; }
+
+  100% {
+    left: 100%; } }
+
+.bk3 {
+  background: black; }
+  .bk3 div {
+    width: 25%;
+    height: 100%;
+    position: absolute;
+    -ms-animation: bkchange 5s linear infinite;
+    -moz-animation: bkchange 5s linear infinite;
+    -webkit-animation: bkchange 5s linear infinite;
+    -o-animation: bkchange 5s linear infinite;
+    animation: bkchange 5s linear infinite; }
+  .bk3 .bk3-1 {
+    background: url(bk3-1.jpg) center center no-repeat fixed;
+    background-size: cover;
+    -ms-animation-delay: 0s;
+    -moz-animation-delay: 0s;
+    -webkit-animation-delay: 0s;
+    -o-animation-delay: 0s;
+    animation-delay: 0s; }
+  .bk3 .bk3-2 {
+    background: url(bk3-2.jpg) center center no-repeat fixed;
+    background-size: cover;
+    -ms-animation-delay: 1s;
+    -moz-animation-delay: 1s;
+    -webkit-animation-delay: 1s;
+    -o-animation-delay: 1s;
+    animation-delay: 1s; }
+  .bk3 .bk3-3 {
+    background: url(bk3-3.jpg) center center no-repeat fixed;
+    background-size: cover;
+    -ms-animation-delay: 2s;
+    -moz-animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+    -o-animation-delay: 2s;
+    animation-delay: 2s; }
+  .bk3 .bk3-4 {
+    background: url(bk3-4.jpg) center center no-repeat fixed;
+    background-size: cover;
+    -ms-animation-delay: 3s;
+    -moz-animation-delay: 3s;
+    -webkit-animation-delay: 3s;
+    -o-animation-delay: 3s;
+    animation-delay: 3s; }
+  .bk3 .bk3-5 {
+    background: url(bk3-5.jpg) center center no-repeat fixed;
+    background-size: cover;
+    -ms-animation-delay: 4s;
+    -moz-animation-delay: 4s;
+    -webkit-animation-delay: 4s;
+    -o-animation-delay: 4s;
+    animation-delay: 4s; }
+
+.headline, .text2, .text3, .note3 {
   opacity: 1;
   position: fixed;
   z-index: 2;
@@ -34,17 +121,25 @@ body {
   top: 100px;
   width: 100%;
   background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.9);
   padding: 40px 0 70px; }
-  .headline h1, .text2 h1 {
+  .headline h1, .text2 h1, .text3 h1, .note3 h1 {
     font-size: 48px;
     margin: 0 0 0 100px; }
-  .headline p, .text2 p {
+  .headline p, .text2 p, .text3 p, .note3 p {
     font-size: 18px;
     font-weight: 200;
     width: 500px;
     letter-spacing: 2px;
     line-height: 22px;
     margin: 10px 0 0 140px; }
+
+.note3 {
+  width: 40%;
+  left: 60%;
+  background: none;
+  box-shadow: none;
+  line-height: 48px; }
 
 .albums {
   padding: 20px;
@@ -64,3 +159,19 @@ svg#county {
   display: block;
   position: fixed;
   z-index: 11; }
+
+.share {
+  position: fixed;
+  z-index: 12;
+  width: 100%;
+  padding: 50px;
+  top: 40%;
+  height: 20%;
+  text-align: center;
+  color: #cccccc; }
+  .share .fb-like {
+    -ms-transform: scale(2);
+    -moz-transform: scale(2);
+    -webkit-transform: scale(2);
+    -o-transform: scale(2);
+    transform: scale(2); }
