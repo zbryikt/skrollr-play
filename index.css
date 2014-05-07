@@ -175,3 +175,5 @@ svg#county {
     -webkit-transform: scale(2);
     -o-transform: scale(2);
     transform: scale(2); }
+  .share a {
+    color: #ddffee; }
